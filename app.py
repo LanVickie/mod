@@ -30,9 +30,9 @@ client = OpenAI(api_key=api_key)
 # Streamlit UI components
 st.title("OpenAI Moderation API Demo")
 # Show different content based on the user's email address.
-if st.experimental_user.email == "jane@examples.com":
+if st.experimental_user.email == "sumin.lan@philips.com":
     display_jane_content()
-elif st.experimental_user.email == "adam@example.com":
+elif st.experimental_user.email == "nnmlanvickie@gmail.com":
     display_adam_content()
 else:
     st.write("Please contact us to get access!")
