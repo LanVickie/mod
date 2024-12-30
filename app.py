@@ -23,18 +23,19 @@ def serialize(obj):
 
 # Access the OpenAI API key from Streamlit secrets
 api_key = st.secrets["openai_secret"]
+api_url = st.secrets["openai_url"]
 work_email = st.secrets["work_email"]
-personal_email = st.secrets["my_email"]
+private_email = st.secrets["my_email"]
 
 # Initialize the OpenAI client with the API key from secrets
-client = OpenAI(api_key=api_key)
+client = OpenAI(base_url=api_url, api_key=api_key)
 
 # Streamlit UI components
 st.title("OpenAI Moderation API Demo")
 # Show different content based on the user's email address.
 if st.experimental_user.email == work_email:
     display_jane_content()
-elif st.experimental_user.email == my_email:
+elif st.experimental_user.email == private_email:
     display_adam_content()
 else:
     st.write("Please contact us to get access!")
